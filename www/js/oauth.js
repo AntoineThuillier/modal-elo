@@ -1,0 +1,18 @@
+var url = "#....";
+var client_id = "#....";
+var client_secret = "#....";
+
+function oAuthConnect() {
+    // récupérez ici avec Jquery les valeurs contenus dans vos champs <input> du template de login
+    var username = $("#log_login").val();
+    var password = $("#log_password").val();
+
+    return $.post(url + "/token.php", {
+        client_id: client_id,
+        client_secret: client_secret,
+        grant_type: "password",
+        username: username,
+        password: password,
+    });
+
+}
